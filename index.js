@@ -240,9 +240,8 @@ class Snake {
 
 }
 
-module.exports = {
-  Block,
-  Apple,
-  Snake,
-  Stage
+module.exports = function (id = 'canvas') {
+  const stage = new Stage(id)
+  const snake = new Snake()
+  stage.play(snake)
 }
