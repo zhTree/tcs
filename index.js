@@ -107,7 +107,7 @@ class Stage {
     this.snake = snake
     this.apple = this.newApple(snake)
     let timer = setInterval(() => {
-      if (this.snake.move(stage) === true) {
+      if (this.snake.move(this) === true) {
         clearInterval(timer)
         return
       }
@@ -138,9 +138,9 @@ class Stage {
           case 107:
             clearInterval(timer)
             this.speed = this.speed > 100 ? this.speed - 50 : this.speed
-            console.log(this.speed)
+            // console.log(this.speed)
             timer = setInterval(() => {
-              if (this.snake.move(stage) === true) {
+              if (this.snake.move(this) === true) {
                 clearInterval(timer)
                 return
               }
@@ -152,7 +152,7 @@ class Stage {
             clearInterval(timer)
             this.speed = this.speed < 1000 ? this.speed + 50 : this.speed
             timer = setInterval(() => {
-              if (this.snake.move(stage) === true) {
+              if (this.snake.move(this) === true) {
                 clearInterval(timer)
                 return
               }
